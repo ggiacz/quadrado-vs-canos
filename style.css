@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tela_do_jogo {
+    width: 1366px;
+    height: 720px;
+    border: 3px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background: linear-gradient(rgb(11, 173, 173), rgb(184, 242, 246));
+}
+
+.cano {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    animation: animacao_do_cano 1.6s linear infinite;
+    bottom: -13px;
+    
+}
+
+.cubo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 15%;
+    bottom: 0;
+}
+
+.pulo {
+    animation: pulo_do_cubo 1s ease-out;
+}
+
+/* nao funciona*/
+.morte {
+    animation: mortee 10s ease-in-out;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Helvetica', cursive;
+    font-size: 50px;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    text-align: center;
+    z-index: 1;
+}
+
+@keyframes animacao_do_cano {
+    from {
+        right: -12%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes pulo_do_cubo {
+    0% {
+        bottom: 0%;
+        rotate: 0deg;
+    }
+
+    40% {
+        bottom: 260px;
+        rotate: 60deg;
+    }
+
+    60% {
+        bottom: 260px;
+        rotate: 75deg;
+    }
+
+    100% {
+        bottom: 0%;
+        rotate: 90deg;
+    }
+}
+
+@keyframes mortee {
+    from {
+        background: linear-gradient(rgb(11, 173, 173), rgb(184, 242, 246));
+    }
+    to {
+        background: linear-gradient(rgb(111, 24, 24), rgb(246, 174, 174));
+    }
+}
